@@ -1,6 +1,7 @@
 # Vtf
 
-This gem can parse valves VTF texture format
+This gem can parse valves VTF texture format. Right now, it reads header data only. It is a rough
+ruby port of [https://github.com/galaco/vtf](https://github.com/galaco/vtf).
 
 ## Installation
 
