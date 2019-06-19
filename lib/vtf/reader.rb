@@ -4,6 +4,15 @@ module Vtf
 
     # data is a string
     def read(data)
+      header = readHeader(data)
+
+      result = Vtf::Vtf.new
+      result.header = header
+
+      return result
+    end
+
+    def readHeader(data)
       signature = data[0, 4]
       version = data[4, 8]
       headerSize = data[12, 4]
@@ -16,11 +25,11 @@ module Vtf
       reflectivity = data[32, 12]
       # skip 4
       bumpmapscale = data[48, 4]
-      highResImageFormat = data[42, 4]
+      highResImageFormat = data[52, 4]
       mipMapCount = data[56, 1]
       lowResImageFormat = data[57, 4]
-      lowResImageWidth = data[58, 1]
-      lowResImageHeight = data[59, 1]
+      lowResImageWidth = data[61, 1]
+      lowResImageHeight = data[62, 1]
 
       header = Header.new
       header.signature = signature.unpack("C4")

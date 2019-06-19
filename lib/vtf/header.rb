@@ -1,14 +1,12 @@
 # Vtf
 module Vtf
   # Consistent Vtf header across all versions
-  class HeaderCommon
+  class Header
     attr_accessor :signature, :version, :headersize, :width, :height, :flags,
                   :frames, :firstframe, :reflectivity, :bumpmapscale,
                   :highresimageformat, :mipmapcount, :lowresimageformat,
-                  :lowresimagewidth, :lowresimageheight
-  end
+                  :lowresimagewidth, :lowresimageheight, :depth, :numresource
 
-  class Header < HeaderCommon
     def initialize () end
   end
 end
